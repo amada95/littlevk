@@ -7,7 +7,7 @@ OUT	= littlevk
 
 all: *.cpp *.hpp
 	@mkdir -p build
-	$(CXX) -o build/$(OUT) *.cpp $(CFLAGS) $(LDFLAGS)
+	$(CXX) $(CFLAGS) -o build/$(OUT) *.cpp $(LDFLAGS)
 
 test: all
 	./build/$(OUT)

@@ -6,18 +6,20 @@
 #include <string>
 
 namespace lvk {
-	class LvkWindow {
-		public:
-			LvkWindow(int w, int h, std::string name);
-			~LvkWindow();
-			
-			bool shouldClose();
-		private:
-			void initWindow();
 
-			const int width;
-			const int height;
-			std::string windowName;
-			GLFWwindow* window;
-	};
+class LvkWindow {
+	public:
+		LvkWindow(int w, int h, std::string name);
+		~LvkWindow();
+		
+		bool shouldClose() { return glfwWindowShouldClose(window); };
+	private:
+		void initWindow();
+
+		const int width;
+		const int height;
+		std::string windowName;
+		GLFWwindow* window;
+};
+
 }

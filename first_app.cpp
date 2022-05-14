@@ -2,9 +2,11 @@
 #include <GLFW/glfw3.h>
 
 namespace lvk {
-    void FirstApp::run() {
-        while(lvkWindow.shouldClose()) {
-            glfwPollEvents();
-        }
+
+void FirstApp::run() {
+    while(!lvkWindow.shouldClose()) {
+        glfwPollEvents();
     }
+}
+
 }
