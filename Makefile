@@ -1,16 +1,14 @@
-CXX	= g++
+CXX		= g++
 CFLAGS	= -std=c++17 -O2
 LDFLAGS	= -lglfw -lvulkan -ldl -lpthread -lX11 -lXxf86vm -lXrandr -lXi
-OUT	= littlevk
+OUT		= littlevk
 
-.PHONY: all test clean
+.PHONY: all shaders clean
 
-all: *.cpp *.hpp
-	@mkdir -p build
-	$(CXX) $(CFLAGS) -o build/$(OUT) *.cpp $(LDFLAGS)
-
-test: all
-	./build/$(OUT)
+all: src/*.cpp src/*.hpp shaders
+	@mkdir -p build/bin
+	$(CXX) $(CFLAGS) -o build/bin/$(OUT) **/*.cpp $(LDFLAGS)
+	@build/bin/$(OUT)
 
 clean:
 	rm -rf build

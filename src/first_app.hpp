@@ -1,6 +1,7 @@
 #pragma once
 
 #include "lvk_window.hpp"
+#include "lvk_pipeline.hpp"
 
 namespace lvk {
     
@@ -12,6 +13,7 @@ class FirstApp {
         void run();
     private:
         LvkWindow lvkWindow{WIDTH, HEIGHT, "Hello Vulkan!"};
+        LvkPipeline lvkPipeline{"build/shaders/triangle_shader.vert.spv", "build/shaders/triangle_shader.frag.spv"};
 };
 
 }
