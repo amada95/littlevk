@@ -11,6 +11,9 @@ class LvkWindow {
 	public:
 		LvkWindow(int w, int h, std::string name);
 		~LvkWindow();
+
+		LvkWindow(const LvkWindow &) = delete;
+		LvkWindow &operator=(const LvkWindow &) = delete;
 		
 		bool shouldClose() { return glfwWindowShouldClose(window); };
 	private:
